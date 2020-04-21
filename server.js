@@ -21,9 +21,9 @@ server.use(bodyParser.json());
 server.use(cors());
 
 server.get('/', (req, resp) => {
-  db.select('*')
-  .from('admin')
-  .then(data => resp.json(data))
+  	db.select()
+  		.table('admin')
+  		.then(data => resp.json(data))
  });
 
 server.post('/register', (req, resp) => {
