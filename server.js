@@ -21,7 +21,9 @@ server.use(bodyParser.json());
 server.use(cors());
 
 server.get('/', (req, resp) => {
-  resp.json(process.env.DATABASE_URL);
+  db.select('*')
+  .from('admin')
+  .then(data => resp.json(data))
  });
 
 server.post('/register', (req, resp) => {
