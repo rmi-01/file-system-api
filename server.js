@@ -8,6 +8,7 @@ const download = require('download');
 
 const db = knex({
   client: 'pg',
+  version: '7.2',
   connection: {
   connectionString: process.env.DATABASE_URL,
   ssl: true,
