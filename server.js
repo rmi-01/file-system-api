@@ -8,7 +8,6 @@ const download = require('download');
 
 const db = knex({
   client: 'pg',
-  version: '7.2',
   connection: {
   	connectionString: process.env.DATABASE_URL,
   	ssl: true
@@ -22,7 +21,7 @@ server.use(bodyParser.json());
 server.use(cors());
 
 server.get('/', (req, resp) => {
-  resp.json("Its working!");
+  resp.json(process.env.DATABASE_URL);
  });
 
 server.post('/register', (req, resp) => {
