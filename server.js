@@ -195,6 +195,6 @@ server.delete('/delete/:id', (req,resp) => {
 
 
 
-server.listen(3000, () => {
-	console.log('Server is working on 3000');
+server.listen(process.env.PORT || 3000, () => {
+	console.log(`Server is working on ${process.env.PORT}`);
 });
